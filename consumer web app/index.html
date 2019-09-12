@@ -16,7 +16,7 @@
 
 <body class="bg">
 
-    <div class="wrapper">
+    <div class="wrapper" id="indexApp">
         <!-- top nav bar -->
         <nav class="section">
             <div class="row mrl-15 bdr bt-0 bgw shd">
@@ -80,8 +80,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 bdr bgw shd">
-                            <nav aria-label="Page navigation example " class="ht-100p pt-10 fit">
-                                <ul class="pagination pagination-circle pg-blue ht-100p mb-0 fr">
+                            <nav aria-label="Page navigation example " class="ht-100p pt-10 fit ma">
+                                <ul class="pagination pagination-circle pg-blue ht-100p mb-0">
                                     <li class="page-item disabled">
                                         <a class="page-link page-link-first">First</a>
                                     </li>
@@ -115,11 +115,11 @@
                             </div>
                             <div class="results-text">
                                 <div class="input-group input-group-sm ">
-                                        <input type="text" class="form-control search-bg" placeholder="">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">Go</button>
-                                        </div>
+                                    <input type="text" class="form-control search-bg" placeholder="">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">Go</button>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,54 +135,41 @@
             <div class="row mrl-15 ">
                 <!-- filter row -->
                 <div class="col-lg-1 bdr bgw shd">
-                    <div class="category-heading">
+                    <div  class="category-heading">
                         <i class="fa fa-check app-tick "></i>
-                        Ages
+                        Ages 
                     </div>
-                    <div class="category-item">
-                        <i class="fa fa-check app-tick "></i>
-                        All
-                    </div>
-                    <div class="category-item">
-                        <i class="fa fa-check app-tick "></i>
-                        Baby (0-3)
-                    </div>
-                    <div class="category-item">
-                        <i class="fa fa-check app-tick "></i>
-                        Young (4-9)
-                    </div>
-                    <div class="category-item">
-                        <i class="fa fa-check app-tick active"></i>
-                        Teen (10-17)
-                    </div>
-                    <div class="category-item">
-                        <i class="fa fa-check app-tick "></i>
-                        Youth (18-36)
-                    </div>
-                    <div class="category-item">
-                        <i class="fa fa-check app-tick "></i>
-                        Adult (37-65)
-                    </div>
-                    <div class="category-item">
-                        <i class="fa fa-check app-tick "></i>
-                        Grandy (66+)
+                    <div v-for="age_group in age_groups" class="category-item">
+                        <i v-if="selected_age_group_ids.indexOf(age_group.id) > -1" class="fa fa-check app-tick active"></i>
+                        <i v-else="selected_age_group_ids.indexOf(age_group.id) == -1" class="fa fa-check app-tick "></i>
+                        {{age_group.name}}
                     </div>
                     <div class="category-heading">
                         Colors
                     </div>
-                    <div class="category-color-item">
-                        <i class="fa fa-check app-tick active"></i>
-                        All
+                    <div v-for="color in colors" v-class="'category-color-item ' + age_group.css_class">
+                        {{age_group.name}}
                     </div>
-                    <div class="category-color-item cci-red">
-                        Red
-                    </div>
-                    <div class="category-color-item cci-blue">
-                        Blue
+                    <div class="category-color-item ">
+                        
                     </div>
                 </div>
                 <div class="col-lg-2 bdr bgw shd">
-
+                    <div class="category-heading">
+                        Sizes
+                    </div>
+                    <div class="category-item">
+                        Slender (small)
+                    </div>
+                    <div class="category-item">
+                        Medium (normal)
+                    </div>
+                    <div class="category-item">
+                        Large (L)
+                    </div>
+                    <div class="category-item">
+                        Extra Large (XXL)
+                    </div>
                     <div class="category-heading">
                         Categories
                     </div>
@@ -195,7 +182,86 @@
                 </div>
                 <!-- display column -->
                 <div class="col-lg-7">
+                    <div class="row mrl-5 result-row">
 
+                        <div v-for="result in searchResults" class="col-lg-3 p-4">
+                            <div class="index-card bgw shd-2">
+                                <div class="index-card-header ht-40">
+                                    <div class="index-card-header-avatar">
+                                        <img src="img/logo only.png" class="index-card-header-avatar-img" />
+                                    </div>
+                                    <div class="index-card-header-text">
+                                        <div class="index-card-header-text-upper">
+                                            white body armour that is a very long header
+                                        </div>
+                                        <div class="index-card-header-text-lower">
+                                            chunk stores the very big name in fashion
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="index-card-body">
+                                    <div class="card-rating">
+                                        <i class="fa fa-star app-color" aria-hidden="true"></i>
+                                        <i class="fa fa-star app-color" aria-hidden="true"></i>
+                                        <i class="fa fa-star app-color" aria-hidden="true"></i>
+                                        <i class="fa fa-star app-color" aria-hidden="true"></i>
+                                        <i class="fa fa-star app-color" aria-hidden="true"></i>
+                                    </div>
+                                    <img src="img/dummy.jpg" class="index-card-body-dummy-img" />
+                                    <button type="button" class="btn btn-sm btn-clear fr card-thing">
+                                        <i class="fa fa-heart app-color"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-clear fr card-like-thing">
+                                            <i class="fa fa-thumbs-up app-color" aria-hidden="true"></i>
+                                        </button>
+                                    <div class="card-price-old">120,607,000 ugx</div>
+                                    <div class="card-price">120,607,000 ugx</div>
+                                </div>
+                                <div class="index-card-footer">
+
+                                        <button class="btn btn-clear btn-tiny fr"  type="button">
+                                                <i class="fa fa-eye app-color"></i>
+                                                View
+                                            </button>
+                                    
+                                    <div class="input-group input-group-sm wdt-70p fl">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-warning btlr-4 bblr-4 btn-tiny" type="button">
+                                                <i class="fa fa-plus"></i>
+                                                BUY
+                                            </button>
+                                        </div>
+                                        <!-- disabled because we dont want input here -->
+                                        <input type="text" class="form-control search-bg text-center ht-20" disabled placeholder="">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-danger btn-tiny"  type="button">
+                                                <i class="fa fa-minus"></i>
+                                                REM
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    
+                                    <!-- <button type="button" class="btn btn-sm btn-warning fl">+ BUY</button> -->
+                                    <!-- will be added when we add negotiation powers aquired by customer
+                                        <div class="input-group input-group-sm fit">
+                                            <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button">Go</button>
+                                                </div>
+                                        <input type="text" class="form-control search-bg" placeholder="">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">Go</button>
+                                        </div>
+                                    </div> -->
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
                 <!-- adds column -->
                 <div class="col-lg-2 bdr bgw shd">
@@ -212,8 +278,10 @@
 
 
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="./node_modules/popper.js/dist/popper.min.js"></script>
+    <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
