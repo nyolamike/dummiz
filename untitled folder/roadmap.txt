@@ -1,0 +1,14 @@
+When a results card is clicked on the circle or business, the user navigates to the businesses store
+
+To add a module of sales (huge discounts) but this still needs furthur thought as businesses can have their own sales
+
+To include a page that lists fashion designers ans their workshops
+
+To give buys the ability to negotiate new prices but i tihink that this will come after showing some commitment, or
+if salers add this to their business, or if clients win these powers, but for the sa
+
+To integrate services like dry cleaners e.g (Yonas Clean Plus)
+
+the search must have auto complete
+
+At this point we need to add a price filter, the materials thing will come as a tab on the filter, 

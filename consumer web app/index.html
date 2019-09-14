@@ -61,10 +61,22 @@
                 <div class="col-lg-3 bdr bgw shd">
                     <form class="py-2">
                         <div class="input-group">
+
                             <input type="text" class="form-control search-bg" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-clear gender-btn search-bg " type="button">
+                                    <i class="fa fa-female fs-19"></i>
+                                </button>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-clear gender-btn search-bg app-color" type="button">
+                                    <i class="fa fa-male fs-19"></i>
+                                </button>
+                            </div>
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -76,7 +88,7 @@
                                 5,967,234
                             </div>
                             <div class="results-text">
-                                Results Found
+                                Male Results Found
                             </div>
                         </div>
                         <div class="col-lg-6 bdr bgw shd">
@@ -135,49 +147,67 @@
             <div class="row mrl-15 ">
                 <!-- filter row -->
                 <div class="col-lg-1 bdr bgw shd">
-                    <div  class="category-heading">
+                    <div class="category-heading">
                         <i class="fa fa-check app-tick "></i>
-                        Ages 
+                        Min Price
+                    </div>
+                    <input type="text" class="form-control search-bg price-input" value="120,607,000" placeholder="">
+                    <div class="category-heading">
+                        <i class="fa fa-check app-tick "></i>
+                        Ages
                     </div>
                     <div v-for="age_group in age_groups" class="category-item">
-                        <i v-if="selected_age_group_ids.indexOf(age_group.id) > -1" class="fa fa-check app-tick active"></i>
-                        <i v-else="selected_age_group_ids.indexOf(age_group.id) == -1" class="fa fa-check app-tick "></i>
+                        <i v-if="selected_age_group_ids.indexOf(age_group.id) > -1"
+                            class="fa fa-check app-tick active"></i>
+                        <i v-else="selected_age_group_ids.indexOf(age_group.id) == -1"
+                            class="fa fa-check app-tick "></i>
                         {{age_group.name}}
                     </div>
                     <div class="category-heading">
                         Colors
                     </div>
-                    <div v-for="color in colors" v-class="'category-color-item ' + age_group.css_class">
-                        {{age_group.name}}
-                    </div>
-                    <div class="category-color-item ">
-                        
+                    <div v-for="color in colors" v-class="'category-color-item ' + color.css_class">
+                        <i v-if="selected_color_ids.indexOf(color.id) > -1" class="fa fa-check app-tick active"></i>
+                        <i v-else="selected_color_ids.indexOf(color.id) == -1" class="fa fa-check app-tick "></i>
+                        {{color.name}}
                     </div>
                 </div>
-                <div class="col-lg-2 bdr bgw shd">
+                <div class="col-lg-1 bdr bgw shd">
+                        <div class="category-heading">
+                                <i class="fa fa-check app-tick "></i>
+                                Max Price
+                            </div>
+                            <input type="text" class="form-control search-bg price-input" value="120,607,000" placeholder="">
                     <div class="category-heading">
                         Sizes
                     </div>
-                    <div class="category-item">
-                        Slender (small)
+                    <div v-for="size in sizes" class="category-item">
+                        <i v-if="selected_size_ids.indexOf(size.id) > -1" class="fa fa-check app-tick active"></i>
+                        <i v-else="selected_size_ids.indexOf(size.id) == -1" class="fa fa-check app-tick "></i>
+                        {{size.name}}
                     </div>
-                    <div class="category-item">
-                        Medium (normal)
+                    <div class="category-heading">
+                        Materials
                     </div>
-                    <div class="category-item">
-                        Large (L)
+                    <div v-for="material in materials" class="category-item">
+                        <i v-if="selected_material_ids.indexOf(material.id) > -1"
+                            class="fa fa-check app-tick active"></i>
+                        <i v-else="selected_material_ids.indexOf(material.id) == -1" class="fa fa-check app-tick "></i>
+                        {{material.name}}
                     </div>
-                    <div class="category-item">
-                        Extra Large (XXL)
+                </div>
+                <div class="col-lg-1 bdr bgw shd">
+                    <div class="winner-bells">
+                        
                     </div>
                     <div class="category-heading">
                         Categories
                     </div>
-                    <div class="category-item">
-                        Party Dresses
-                    </div>
-                    <div class="category-item">
-                        Skirts
+                    <div v-for="category in categories" class="category-item">
+                        <i v-if="selected_category_ids.indexOf(category.id) > -1"
+                            class="fa fa-check app-tick active"></i>
+                        <i v-else="selected_category_ids.indexOf(category.id) == -1" class="fa fa-check app-tick "></i>
+                        {{category.name}}
                     </div>
                 </div>
                 <!-- display column -->
@@ -213,18 +243,18 @@
                                         <i class="fa fa-heart app-color"></i>
                                     </button>
                                     <button type="button" class="btn btn-sm btn-clear fr card-like-thing">
-                                            <i class="fa fa-thumbs-up app-color" aria-hidden="true"></i>
-                                        </button>
+                                        <i class="fa fa-thumbs-up app-color" aria-hidden="true"></i>
+                                    </button>
                                     <div class="card-price-old">120,607,000 ugx</div>
                                     <div class="card-price">120,607,000 ugx</div>
                                 </div>
                                 <div class="index-card-footer">
 
-                                        <button class="btn btn-clear btn-tiny fr"  type="button">
-                                                <i class="fa fa-eye app-color"></i>
-                                                View
-                                            </button>
-                                    
+                                    <button class="btn btn-clear btn-tiny fr" type="button">
+                                        <i class="fa fa-eye app-color"></i>
+                                        View
+                                    </button>
+
                                     <div class="input-group input-group-sm wdt-70p fl">
                                         <div class="input-group-append">
                                             <button class="btn btn-warning btlr-4 bblr-4 btn-tiny" type="button">
@@ -233,18 +263,19 @@
                                             </button>
                                         </div>
                                         <!-- disabled because we dont want input here -->
-                                        <input type="text" class="form-control search-bg text-center ht-20" disabled placeholder="">
+                                        <input type="text" class="form-control search-bg text-center ht-20" disabled
+                                            placeholder="">
                                         <div class="input-group-append">
-                                            <button class="btn btn-danger btn-tiny"  type="button">
+                                            <button class="btn btn-danger btn-tiny" type="button">
                                                 <i class="fa fa-minus"></i>
                                                 REM
                                             </button>
                                         </div>
                                     </div>
 
-                                    
 
-                                    
+
+
                                     <!-- <button type="button" class="btn btn-sm btn-warning fl">+ BUY</button> -->
                                     <!-- will be added when we add negotiation powers aquired by customer
                                         <div class="input-group input-group-sm fit">
