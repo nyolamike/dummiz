@@ -116,9 +116,10 @@
 }
 
 .category-item{
-    padding: 4px;
+    padding: 1px;
     font-size: 12px;
     cursor: pointer;
+    padding-left: 4px;
 }
 
 .category-color-item{
@@ -251,7 +252,7 @@
 }
 
 .result-row{
-    height: 550px;
+    height: 590px;
     overflow-y: scroll;
 }
 
@@ -299,7 +300,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-top: 3px;
-    color: #16383ade;
+    /* color: #16383ade; */
+    color: #516869;
 }
 
 .index-card-header-text-lower{
@@ -444,4 +446,71 @@
     min-width: 100%;
     width:100%;
     height: 53px;
+}
+
+.shopping-cart-icon-wrapper{
+    float: left;
+    cursor: pointer;
+    min-height: 100%;
+    height: 100%;
+    margin-right: 5px;
+    /* background-color: yellow; */
+    padding-top: 17px;
+    margin-left: 10px;
+}
+
+.shopping-cart-icon-container{
+    color: #3b9094;
+    border: 1px solid #3b9094;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.vsep{
+    min-width: 2px;
+    width: 2px;
+    min-height: 100%;
+    height: 100%;
+    text-align: center;
+    /* background-color: red; */
+    float: left;
+}
+
+.cart-icon-text{
+    font-size: 14px;
+    font-size: 10px;
+    font-weight: bolder;
+    color: #516869;
+}
+.cart-icon-count{
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    vertical-align: super;
+    /* text-shadow: -2px 3px 20px #3b9094ad; */
+    position: absolute;
+    top: 10px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.location-brand{
+    position: absolute;
+    top: 52px;
+    /* right: 10px; */
+    left: 75px;
+    font-size: 10px;
+}
+
+.brand-flag{
+    height: 20px;
+    width: 24px;
 }

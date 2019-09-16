@@ -60,16 +60,16 @@ $(function(){
         name: "Any"
     },{
         id:2,
-        name: "Slender (small)"
+        name: "Small (S)"
     },{
         id:3,
-        name: "Large (L)"
+        name: "Medium (M)"
     },{
         id:4,
-        name: "Extra Large (XXL)"
+        name: "Large (L)"
     },{
         id:5,
-        name: "Extra Large (XXL)"
+        name: "Big (XL)"
     }];
     
     //materials
@@ -90,7 +90,28 @@ $(function(){
         name: "Jean",
         description:""
     }];
-
+    var types = [{
+        id: 1,
+        name: "Any"
+    },{
+        id: 2,
+        name: "Officeee"
+    },{
+        id: 3,
+        name: "Casual"
+    },{
+        id: 4,
+        name: "Party"
+    },{
+        id: 5,
+        name: "Sports"
+    },{
+        id: 6,
+        name: "Culture"
+    },{
+        id: 7,
+        name: "Beach"
+    }];
     //categories
     //the ranking of a category will go up when ever someone buys an item in that categor
     //the ranking will be used to order items here
@@ -107,6 +128,11 @@ $(function(){
         id:2,
         name: "Skirts",
         gender: "female",
+        ranking:34
+    },{
+        id:2,
+        name: "For Rent",
+        gender: "any",
         ranking:34
     },{
         id:3,
@@ -213,7 +239,9 @@ $(function(){
             categories:categories.slice(0,18),
             selected_category_ids:[3,5,7],
             materials:materials,
-            selected_material_ids:[2,3]
+            selected_material_ids:[2,3],
+            types: types,
+            selected_type_ids: [2]
         },
         methods:{
 

@@ -4,7 +4,7 @@ To add a module of sales (huge discounts) but this still needs furthur thought a
 
 To include a page that lists fashion designers ans their workshops
 
-To give buys the ability to negotiate new prices but i tihink that this will come after showing some commitment, or
+To give the ability to negotiate new prices but i tihink that this will come after showing some commitment, or
 if salers add this to their business, or if clients win these powers, but for the sa
 
 To integrate services like dry cleaners e.g (Yonas Clean Plus)

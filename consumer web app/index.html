@@ -29,8 +29,12 @@
                     <a class="navbar-brand" href="#">
                         <img src="./img/logo trimmed.png" alt="">
                     </a>
+                    <div class="location-brand">
+                        Kampala - Uganda
+                        <img class="brand-flag" src="img/flag-usa.png" alt="">
+                    </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-6">
                     <div class="page-tab-btn">
                         <div class="page-tab-txt active">
                             CLOTHES
@@ -52,10 +56,32 @@
                         </div>
                     </div> -->
                 </div>
+                <div class="col-lg-3 pt-10">
+                    <div class="shopping-cart-icon-wrapper">
+                        <div class="shopping-cart-icon-container">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </div>
+                        <label class="cart-icon-count">100</label>
+                        <label class="cart-icon-text">To Buy</label>
+                    </div>
+                    <div class="vsep"></div>
+                    <div class="shopping-cart-icon-wrapper">
+                        <div class="shopping-cart-icon-container">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                        <label class="cart-icon-count">100</label>
+                        <label class="cart-icon-text">Whish List</label>
+                    </div>
+                    <div class="shopping-cart-icon-wrapper">
+                        <div class="shopping-cart-icon-container">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <label class="cart-icon-text">Cloria N</label>
+                    </div>
+                </div>
             </div>
         </nav>
-        <br />
-        <div class="section">
+        <div class="section mt-10">
             <div class="row mrl-15 ">
                 <!-- search -->
                 <div class="col-lg-3 bdr bgw shd">
@@ -139,11 +165,11 @@
                 <!-- adds column -->
                 <div class="col-lg-2 bdr bgw shd">
 
+
                 </div>
             </div>
         </div>
-        <br />
-        <div class="section">
+        <div class="section mt-10">
             <div class="row mrl-15 ">
                 <!-- filter row -->
                 <div class="col-lg-1 bdr bgw shd">
@@ -164,6 +190,14 @@
                         {{age_group.name}}
                     </div>
                     <div class="category-heading">
+                            Sizes
+                        </div>
+                        <div v-for="size in sizes" class="category-item">
+                            <i v-if="selected_size_ids.indexOf(size.id) > -1" class="fa fa-check app-tick active"></i>
+                            <i v-else="selected_size_ids.indexOf(size.id) == -1" class="fa fa-check app-tick "></i>
+                            {{size.name}}
+                        </div>
+                    <div class="category-heading">
                         Colors
                     </div>
                     <div v-for="color in colors" v-class="'category-color-item ' + color.css_class">
@@ -173,18 +207,18 @@
                     </div>
                 </div>
                 <div class="col-lg-1 bdr bgw shd">
-                        <div class="category-heading">
-                                <i class="fa fa-check app-tick "></i>
-                                Max Price
-                            </div>
-                            <input type="text" class="form-control search-bg price-input" value="120,607,000" placeholder="">
                     <div class="category-heading">
-                        Sizes
+                        <i class="fa fa-check app-tick "></i>
+                        Max Price
                     </div>
-                    <div v-for="size in sizes" class="category-item">
-                        <i v-if="selected_size_ids.indexOf(size.id) > -1" class="fa fa-check app-tick active"></i>
-                        <i v-else="selected_size_ids.indexOf(size.id) == -1" class="fa fa-check app-tick "></i>
-                        {{size.name}}
+                    <input type="text" class="form-control search-bg price-input" value="120,607,000" placeholder="">
+                    <div class="category-heading">
+                        Types
+                    </div>
+                    <div v-for="type in types" class="category-item">
+                        <i v-if="selected_type_ids.indexOf(type.id) > -1" class="fa fa-check app-tick active"></i>
+                        <i v-else="selected_type_ids.indexOf(type.id) == -1" class="fa fa-check app-tick "></i>
+                        {{type.name}}
                     </div>
                     <div class="category-heading">
                         Materials
@@ -198,7 +232,7 @@
                 </div>
                 <div class="col-lg-1 bdr bgw shd">
                     <div class="winner-bells">
-                        
+
                     </div>
                     <div class="category-heading">
                         Categories
