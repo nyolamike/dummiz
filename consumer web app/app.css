@@ -50,6 +50,7 @@
 .ht-40{
     min-height: 40px;
     height: 40px;
+    max-height: 40px;
 }
 .ht-24{
     min-height: 24px !important;
@@ -822,6 +823,10 @@
     width: 100px;
 }
 
+.wdt-100p{
+    width: 100%;
+}
+
 .wdt-10{
     width: 10px;
 }
@@ -899,4 +904,27 @@
     clear: both;
     font-size: 14px;
     padding-top: 2px;
+}
+
+.ofx-h{
+    overflow-x: hidden;
+}
+
+
+.whish-card-header-text-upper{
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    max-width: 100%;
+    padding-top: 3px;
+    color: #516869;
+}
+
+.whish-got{
+    font-weight: bold;
+    color: #3b9094;
+}
+
+.whish-pending{
+    color: #bb2600;
 }

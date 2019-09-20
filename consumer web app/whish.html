@@ -101,12 +101,12 @@
                         </div>
                     </div>
                     <div class="page-tab-btn">
-                        <div class="page-tab-txt active">
+                        <div class="page-tab-txt">
                             Orders
                         </div>
                     </div>
                     <div class="page-tab-btn">
-                        <div class="page-tab-txt">
+                        <div class="page-tab-txt active">
                             Whish List
                         </div>
                     </div>
@@ -142,141 +142,56 @@
         </nav>
         <div class="section mt-10">
             <div class="row mrl-15 mb-0">
-                <!-- orders -->
-                <div class="col-lg-2 bdr bgw shd result-row ofx-h">
-                    
-                    <div  class="order-list-litem ">
-                        <div class="order-id">No. #4567</div>
-                        <div class="order-money">1,120,607,000 ugx</div>
-                        <div class="order-date">Thursady 2019-09-21 03:34 pm</div>
-                    </div>
-                    <div  class="order-list-litem active">
-                        <div class="order-id">No. #4567</div>
-                        <div class="order-money">1,120,607,000 ugx</div>
-                        <div class="order-date">Thursady 2019-09-21 03:34 pm</div>
-                    </div>
-                    <div v-for="result in searchResults" class="order-list-litem">
-                        <div class="order-id">No. #4567</div>
-                        <div class="order-money">1,120,607,000 ugx</div>
-                        <div class="order-date">Thursady 2019-09-21 03:34 pm</div>
-                    </div>
+                <!-- items i wanna buy -->
+                <div class="col-lg-10 pl-0 ">
+                    <div class="row mrl-5 result-row">
+                        <div v-for="result in searchResults" class="col-lg-2 p-4">
+                            <div class="index-card bgw shd-2">
+                                <div class="index-card-header ht-40">
+                                    <div class="whish-card-header-text-upper">
+                                        white body armour that is a very long header
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="index-card-body">
+                                    <div class="card-rating">
+                                        Status:  <span class="whish-pending">not yet bought</span> 
+                                        <!-- <span class="whish-got">I got the item</span>  -->
+                                    </div>
+                                    <img src="img/dummy.jpg" class="index-card-body-dummy-img" />
+                                </div>
+                                <div class="index-card-footer tac">
 
-                </div>
-                <!-- table and summary -->
-                <div class="col-lg-8 pl-0 ">
-                    <div class="bdr bgw shd result-row ofx-h">
-                        <div>
-                            <div class="purchase-summary-title">Purchase Summary</div>
-                            <dl class="row item-detail-row prl-10 pl-20 mb-0">
-                                <dt class="col-sm-3">Order No.</dt>
-                                <dd class="col-sm-3 tal">#4567</dd>
-                                <dt class="col-sm-3 ">Status</dt>
-                                <dd class="col-sm-3 tar">items collection</dd>
-
-                                <dt class="col-sm-3">Date</dt>
-                                <dd class="col-sm-3 tal">Thursady 2019-09-21</dd>
-                                <dt class="col-sm-3 ">Since</dt>
-                                <dd class="col-sm-3 tar">2 days, 1 hour ago</dd>
-
-                                <dt class="col-sm-3">Time</dt>
-                                <dd class="col-sm-3 tal">02:30 pm</dd>
-                                <dt class="col-sm-3 ">Handler</dt>
-                                <dd class="col-sm-3 tar">#234 | Nyola Mike </dd>
-
-                                <dt class="col-sm-12 ">
-                                    <hr />
-                                </dt>
-
-                                <dt class="col-sm-3">Method</dt>
-                                <dd class="col-sm-3 tal">MTN Mobile Money</dd>
-                                <dt class="col-sm-3 ">TSN ID</dt>
-                                <dd class="col-sm-3 tar">1562890000192</dd>
-
-                                <dt class="col-sm-3">Account</dt>
-                                <dd class="col-sm-3 tal">+256703 158 861</dd>
-                                <dt class="col-sm-3 ">Email:</dt>
-                                <dd class="col-sm-3 tar">nyolamike@live.com</dd>
-
-                                <dt class="col-sm-12 ">
-                                    <hr />
-                                </dt>
-
-                                <dt class="col-sm-3 ">Quantity</dt>
-                                <dd class="col-sm-3 tar">100 items</dd>
-                                <dt class="col-sm-3 ">Delivery</dt>
-                                <dd class="col-sm-3 tar">3,000 ugx</dd>
-
-                                <dt class="col-sm-3">Total Cost</dt>
-                                <dd class="col-sm-3 tar">5,120,607,000 ugx</dd>
-                                <dt class="col-sm-3 ">Network Charge</dt>
-                                <dd class="col-sm-3 tar">4%</dd>
-
-                                <dt class="col-sm-3 ">Discount</dt>
-                                <dd class="col-sm-3 tar">50%</dd>
-                                <dt class="col-sm-3 ">App Discount</dt>
-                                <dd class="col-sm-3 tar">50%</dd>
-
-                                <dt class="col-sm-3 ">Sub Total</dt>
-                                <dd class="col-sm-3 tar">1,120,607,000 ugx</dd>
-                                <dt class="col-sm-3 ">Final Cost</dt>
-                                <dd class="col-sm-3 tar"><b>1,120,607,000 ugx</b></dd>
-
-                                <dt class="col-sm-12 ">
-                                    <hr />
-                                </dt>
-                                <dt class="col-sm-12 tac">
-                                    Items Purchased
-                                </dt>
-                            </dl>
-                        </div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="wdt-10 tac"></th>
-                                    <th class="wdt-80"></th>
-                                    <th class="wdt-200">Item</th>
-                                    <th class="tac wdt-150">Quantity</th>
-                                    <th class="tar">Price (ugx)</th>
-                                    <th class="tar">Cost (ugx)</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="result in searchResults">
-                                    <td class="wdt-10 tac">17</td>
-                                    <td class="wdt-80">
-                                        <img src="img/dummy.jpg" class="list-item-img" />
-                                    </td>
-                                    <td class="wdt-200">
-                                        <div class="list-item-name">
-                                            white body armour that is a very long header
-                                        </div>
-                                        <div class="list-item-name">
-                                            from: chunck store that has a very long name i dont nnow why
-                                            <button class="btn btn-clear btn-tiny fr" type="button">
-                                                <i class="fa fa-eye app-color"></i>
-                                                View
+                                    <div class="input-group input-group-sm wdt-100p ">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-warning btlr-4 bblr-4 btn-tiny" type="button">
+                                                <i class="fa fa-search"></i>
+                                                Search
                                             </button>
                                         </div>
-                                    </td>
-                                    <td class="wdt-150 tac">
-                                        100
-                                    </td>
-                                    <td class="tar">
-                                        <div class="item-list-price">120,607,000</div>
-                                        <div class="item-list-price-old">120,607,000</div>
-                                        <div class="item-list-price-discount">50% discount</div>
-                                        <!-- <div class="item-list-price-discount">500 delivery</div> -->
-                                    </td>
-                                    <td class="tar">
-                                        1,120,607,000
-                                    </td>
-                                    <td>
-                                        collected
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        <div class="input-group-append">
+                                                <button class="btn btn-primary btn-tiny" type="button">
+                                                    <i class="fa fa-check"></i>
+                                                    I Got It
+                                                </button>
+
+                                                <!-- <button class="btn btn-primary btn-tiny" type="button">
+                                                        <i class="fa fa-minus"></i>
+                                                        Not Yet
+                                                    </button> -->
+                                            </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-danger btn-tiny" type="button">
+                                                <i class="fa fa-times"></i>
+                                                remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <!-- adds column -->
@@ -297,7 +212,7 @@
     <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="orders.js"></script>
+    <script src="whish.js"></script>
 </body>
 
 </html>
