@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dummiz - item</title>
+
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font awesome 5 -->
+    <link href="./fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
+    <!-- application styles -->
+    <link href="app.css" rel="stylesheet" />
+</head>
+
+<body class="bg">
+
+    <div class="wrapper" id="indexApp">
+        <!-- top nav bar -->
+        <nav class="section">
+            <div class="row mrl-15 bdr bt-0 bgw shd">
+                <div class="col-lg-3 ht-40 pt-5">
+                    <a href="" class="top-header-link">Help</a>
+                    <a href="" class="top-header-link">About</a>
+                    <a href="" class="top-header-link">Delivery</a>
+                    <!-- <a href="" class="top-header-link">Modummy</a>
+                    <a href="" class="top-header-link">Fashlog</a>
+                    <a href="" class="top-header-link">Events</a>
+                    <a href="" class="top-header-link">News</a>
+                    <a href="" class="top-header-link">History</a> -->
+                </div>
+                <div class="col-lg-5 ht-40 pt-5">
+                    <div class="btn-group white">
+                        <a class="btn btn-facebook smb" title="Facebook" target="_blank" href="#">TSi</a>
+                        <a class="btn btn-facebook smb" title="Facebook" target="_blank" href="#"><i
+                                class="fab fa-facebook-f  fa-fw"></i></a>
+                        <a class="btn btn-instagram smb" title="Instagram" target="_blank" href="#"><i
+                                class="fab fa-instagram  fa-fw"></i></a>
+                        <a class="btn btn-youtube smb" title="Youtube" target="_blank" href="#"><i
+                                class="fab fa-youtube  fa-fw"></i></a>
+                        <a class="btn btn-twitter smb" title="Twitter" target="_blank" href="#"><i
+                                class="fab fa-twitter  fa-fw"></i></a>
+                        <a class="btn btn-whatsapp smb" title="Twitter" target="_blank" href="#"><i
+                                class="fab fa-whatsapp  fa-fw"></i></a>
+                    </div>
+                    <div class="icontext">
+                        <div class="icon-wrap iw">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="text-wrap tw">
+                            <div>+256 703 158 861, +256 774 085 041</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 ht-40 pt-5 pr-5 hide-on-load">
+                    <div v-if="user != null" class="fr pl-5 logoff-btn">
+                        <i class="fa fa-power-off " aria-hidden="true"></i>
+                        log out
+                    </div>
+                    <div v-if="user != null" class="fr shopping-cart-icon-container-sm mr-15">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name">Nyola Mike Name Is Very Long</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name ">Business</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Orders</div>
+
+                    <button v-if="user == null" class="btn btn-sm btn-warning fr" href="#">
+                        log in
+                    </button>
+                    <div v-if="user == null" class="fr prl-15">or</div>
+                    <button v-if="user == null" class="btn btn-sm  btn-warning fr" href="#">
+                        create your account
+                    </button>
+                </div>
+            </div>
+            <div class="row mrl-15 bdr bt-0 bgw shd">
+                <div class="col-lg-2">
+                    <a class="navbar-brand" href="#">
+                        <img src="./img/logo trimmed.png" alt="">
+                    </a>
+                    <div class="location-brand">
+                        Kampala - Uganda
+                        <img class="brand-flag" src="img/flag-uganda.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Home
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt ">
+                            Product
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt ">
+                            Shopping List
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Orders
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Whish List
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt active">
+                            Settings
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 pt-10">
+                    <div class="shopping-cart-icon-wrapper">
+                        <div class="shopping-cart-icon-container">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                        <label class="cart-icon-count">100</label>
+                        <label class="cart-icon-text">Whish List</label>
+                    </div>
+                    <div class="shopping-cart-icon-wrapper">
+                        <div class="shopping-cart-icon-container">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </div>
+                        <label class="cart-icon-count">100</label>
+                        <label class="cart-icon-text">To Buy</label>
+                    </div>
+
+                    <div class="vsep"></div>
+
+                    <div class="shopping-cart-icon-wrapper">
+                        <button class="btn btn-sm btn-warning">Click To Pay</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="section mt-10">
+            <div class="row mrl-15 mb-0">
+                <div class="col-lg-10 pl-0 result-row">
+                    <div class="bdrx bgwx shdx result-row ofx-h pl-15">
+                        <!-- account picture box -->
+                        <div class="setup-box shd">
+                            <div class="setup-box-head">
+                                Account Picture
+                            </div>
+                            <div class="setup-box-body">
+                                <div class="pic-box-preview">
+                                    <img src="img/logo only.png" />
+                                </div>
+                                <input type="file" class="hidden" />
+                            </div>
+                            <div class="setup-box-footer">
+                                <button type="button" class="btn btn-sm btn-danger fl">
+                                    <i class="fa fa-times"></i>
+                                    remove picture
+                                </button>
+                                <button type="button" class="btn btn-sm btn-primary fr">
+                                    <i class="fa fa-camera" aria-hidden="true"></i>
+                                    update picture
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <!-- account phone number box -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Account Phone Number for login
+                            </div>
+                            <div class="setup-box-body box-body-flex">
+                                <div class="box-value">0703 158 861</div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <label class="setup-input-label">New Number &nbsp;</label>
+                                    <input type="text" class="form-control search-bg setup-input-field">
+                                </div>
+                                <div class="input-group">
+                                    <label class="setup-input-label">Password &nbsp;</label>
+                                    <input type="password" class="form-control search-bg setup-input-field">
+                                </div>
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <!-- account password -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Account Password
+                            </div>
+                            <div class="setup-box-body box-body-flex pt-0 pb-0">
+                                <div class="box-value  pt-0 ht-15"> * * * * * * * * * *</div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <label class="setup-input-label">Old Password &nbsp;</label>
+                                    <input type="password" class="form-control search-bg setup-input-field">
+                                </div>
+                                <div class="input-group">
+                                    <label class="setup-input-label">New Password &nbsp;</label>
+                                    <input type="password" class="form-control search-bg setup-input-field">
+                                </div>
+                                <div class="input-group">
+                                    <label class="setup-input-label">Repeat Password &nbsp;</label>
+                                    <input type="password" class="form-control search-bg setup-input-field">
+                                </div>
+
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+
+                        <!-- mobile money -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Default Mobile Money Number
+                            </div>
+                            <div class="setup-box-body box-body-flex">
+                                <div class="box-value">0703 158 861</div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <label class="setup-input-label">New Number &nbsp;</label>
+                                    <input type="text" class="form-control search-bg setup-input-field">
+                                </div>
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <!-- mobile money -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Email Address for receipts, promotions etc
+                            </div>
+                            <div class="setup-box-body  box-body-flex">
+                                <div class="box-value">nyolamike@live.com</div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <label class="setup-input-label">New email address &nbsp;</label>
+                                    <input type="text" class="form-control search-bg setup-input-field">
+                                </div>
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <!-- gender and dob -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Gender & Age, for default search
+                            </div>
+                            <div class="setup-box-body box-body-flex">
+                                <div class="box-value">
+                                    <i class="fa fa-male" aria-hidden="true"></i>
+                                    male, born 1989 (28 yrs) -> <i>Youth</i>
+                                </div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <label class="setup-input-label">
+                                        <input type="radio" name="setup-gender" value="male" checked /> Male
+                                        <input type="radio" name="setup-gender" value="female" /> Female
+                                    </label>
+                                    <input type="date" class="form-control search-bg setup-input-field"
+                                        placeholder="date of birth">
+                                </div>
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <!-- country and city -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Country and City
+                            </div>
+                            <div class="setup-box-body box-body-flex">
+                                <div class="box-value">
+                                    Kampala, Uganda
+                                    <img class="brand-flag" src="img/flag-uganda.png" alt="">
+                                </div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <select class="form-control search-bg setup-input-field">
+                                        <option> Select Country </option>
+                                        <option>Uganda</option>
+                                    </select>
+                                    <select class="form-control search-bg setup-input-field">
+                                        <option> Select City </option>
+                                        <option>Kampala</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <!-- color -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Your favourite color
+                            </div>
+                            <div class="setup-box-body box-body-flex">
+                                <div class="box-value">
+                                    <div class="fav-color-red"></div>Red
+                                </div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <label class="setup-input-label"> Choose a colour &nbsp;</label>
+                                    <select class="form-control search-bg setup-input-field">
+                                        <option v-for="color in colors">{{color.name}}</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- size -->
+                        <div class="setup-box">
+                            <div class="setup-box-head">
+                                Your Sizes for default search
+                            </div>
+                            <div class="setup-box-body box-body-flex pt-0 pb-0">
+                                <div class="box-value tal"><div class="value-title-span">Hat size:</div> Medium (M)</div>
+                                <div class="box-value tal"><div class="value-title-span">T-Shirt size:</div> Medium (M)</div>
+                                <div class="box-value tal"><div class="value-title-span">Trouser size:</div> Big (L)</div>
+                                <div class="box-value tal"><div class="value-title-span">Shoe size:</div> Large (L)</div>
+                            </div>
+                            <div class="setup-box-footer">
+                                <div class="input-group">
+                                    <label class="setup-input-label"> What hat fits you? &nbsp;</label>
+                                    <select class="form-control search-bg setup-input-field">
+                                        <option v-for="size in sizes">{{size.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label class="setup-input-label">T-Shirt size? &nbsp;</label>
+                                    <select class="form-control search-bg setup-input-field">
+                                        <option v-for="size in sizes">{{size.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label class="setup-input-label">Trouser fit you? &nbsp;</label>
+                                    <select class="form-control search-bg setup-input-field">
+                                        <option v-for="size in sizes">{{size.name}}</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <label class="setup-input-label">Shoe size? &nbsp;</label>
+                                    <select class="form-control search-bg setup-input-field">
+                                        <option v-for="size in sizes">{{size.name}}</option>
+                                    </select>
+                                </div>
+
+                                <button type="button" class="btn btn-sm btn-primary mt-5 fr">
+                                    submit
+                                </button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+                <!-- adds column -->
+                <div class="col-lg-2 bdr bgw shd">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        Copyright &copy; 2019 mocaloyn, all rights reserved
+    </div>
+
+
+
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="settings.js"></script>
+</body>
+
+</html>

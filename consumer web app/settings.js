@@ -137,11 +137,6 @@ $(function(){
         gender: "any",
         ranking:34
     },{
-        id:2,
-        name: "Costumes",
-        gender: "any",
-        ranking:34
-    },{
         id:3,
         name: "Shirts",
         gender: "any",

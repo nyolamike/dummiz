@@ -10,6 +10,8 @@
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font awesome 5 -->
     <link href="./fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
+    <!-- light box -->
+    <link rel="stylesheet" href="./node_modules/vue-my-photos/dist/lightbox.css"  type="text/css">
     <!-- application styles -->
     <link href="app.css" rel="stylesheet" />
 </head>
@@ -81,7 +83,7 @@
                     </a>
                     <div class="location-brand">
                         Kampala - Uganda
-                        <img class="brand-flag" src="img/flag-usa.png" alt="">
+                        <img class="brand-flag" src="img/flag-uganda.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -275,10 +277,10 @@
                     <div class="bdr bgw shd app-height">
                         <ul class="nav nav-tabs mt-8">
                             <li>
-                                <a href="#item_tab_pictures" data-toggle="tab">Pictures</a>
+                                <a href="#item_tab_pictures" class="active" data-toggle="tab">Pictures</a>
                             </li>
                             <li class="">
-                                <a href="#item_tab_business" class="active" data-toggle="tab">Bussiness</a>
+                                <a href="#item_tab_business"  data-toggle="tab">Bussiness</a>
                             </li>
                             <!-- <li>
                                 <a href="#item_tab_map" data-toggle="tab">Location (map)</a>
@@ -291,10 +293,15 @@
                             </li> -->
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane " id="item_tab_pictures">
-                                gallery
+                            <div class="tab-pane active" id="item_tab_pictures">
+                                <!-- https://vuejsexamples.com/simple-lightbox-component-for-vue-applications/ -->
+                                <!-- :filter="galleryFilter" -->
+                                <lightbox 
+                                    id="mylightbox" ref="lightbox" :images="images" 
+                                    :directory="thumbnailDir" :timeoutDuration="5000">
+                                </lightbox>
                             </div>
-                            <div class="tab-pane active" id="item_tab_business">
+                            <div class="tab-pane " id="item_tab_business">
                                 <div class="tac">
                                     <img src="img/logo.png" class="wdt-200" />
                                 </div>
@@ -353,6 +360,8 @@
     <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <!-- lightbox -->
+    <script src="./node_modules/vue-my-photos/dist/lightbox.js"></script>
     <script src="item.js"></script>
 </body>
 
