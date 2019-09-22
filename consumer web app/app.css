@@ -19,6 +19,10 @@
 }
 
 
+.p-5{
+    padding: 5px !important;
+}
+
 
 .pt-10{
     padding-top: 10px;
@@ -85,6 +89,10 @@
 
 .mb-0{
     margin-bottom: unset;
+}
+
+.mb-5{
+    margin-bottom: 5px !important;
 }
 
 .bt-0{
@@ -214,6 +222,22 @@
     min-width: 15px;
     min-height: 15px;
     background-color: red;
+    margin-right: 5px;
+}
+
+.fav-color-yellow{
+    display: inline-block;
+    min-width: 15px;
+    min-height: 15px;
+    background-color: yellow;
+    margin-right: 5px;
+}
+
+.fav-color-black{
+    display: inline-block;
+    min-width: 15px;
+    min-height: 15px;
+    background-color: black;
     margin-right: 5px;
 }
 
@@ -1046,4 +1070,75 @@
 .value-title-span{
     display: inline-block;
     width: 120px;
+}
+
+.busineess_name{
+    width: 100%;
+}
+
+.busineess_name_image{
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-top: 10px;
+}
+
+.busineess_name_value{
+    float: right;
+    padding-top: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.customer-table-avatar{
+    width: 40px;
+    height: 40px;
+    
+}
+
+
+.stock-fact{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.stock-fact-name{
+    float: left;
+}
+
+.stock-fact-value{
+    float: right;
+    font-size: 12px;
+}
+
+.stock-row{
+    border-bottom: 2px solid #0000005e;
+}
+
+.badge{
+    font-size: 12px;
+    color: red;
+    vertical-align: super;
+    position: absolute;
+    top: 10px;
+    background-color: #3b909429;
+}
+
+.mtr-5{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.cp{
+    cursor: pointer;
+}
+
+.fs-14{
+    font-size: 14px;
+}
+
+.fbox{
+    /* border-bottom: 1px solid #e6e3e2; */
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
