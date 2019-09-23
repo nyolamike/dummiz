@@ -105,9 +105,6 @@ $(function(){
         id: 4,
         name: "Party"
     },{
-        id: 4,
-        name: "Home"
-    },{
         id: 5,
         name: "Sports"
     },{
@@ -147,16 +144,6 @@ $(function(){
     },{
         id:4,
         name: "Trousers",
-        gender: "any",
-        ranking:34
-    },{
-        id:4,
-        name: "Lingere",
-        gender: "any",
-        ranking:34
-    },{
-        id:4,
-        name: "Underware",
         gender: "any",
         ranking:34
     },{

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>dummiz - stock</title>
+    <title>dummiz - purchases</title>
 
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font awesome 5 -->
@@ -25,10 +25,10 @@
                     <a href="" class="top-header-link">About</a>
                     <a href="" class="top-header-link">Delivery</a>
                     <!-- <a href="" class="top-header-link">Modummy</a>
-                    <a href="" class="top-header-link">Fashlog</a>
-                    <a href="" class="top-header-link">Events</a>
-                    <a href="" class="top-header-link">News</a>
-                    <a href="" class="top-header-link">History</a> -->
+                                <a href="" class="top-header-link">Fashlog</a>
+                                <a href="" class="top-header-link">Events</a>
+                                <a href="" class="top-header-link">News</a>
+                                <a href="" class="top-header-link">History</a> -->
                 </div>
                 <div class="col-lg-5 ht-40 pt-5">
                     <div class="btn-group white">
@@ -62,7 +62,8 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                     <div v-if="user  != null" class="fr prl-4 header-account-name">Nyola Mike Name Is Very Long</div>
-                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Business</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Officcee</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name">Business</div>
                     <div v-if="user  != null" class="fr prl-4 header-account-name ">Orders</div>
 
                     <button v-if="user == null" class="btn btn-sm btn-warning fr" href="#">
@@ -96,19 +97,24 @@
                         </div>
                     </div>
                     <div class="page-tab-btn">
-                        <div class="page-tab-txt">
+                        <div class="page-tab-txt active">
                             Items Sold
                             <label class="badge bg-red">100</label>
                         </div>
                     </div>
                     <div class="page-tab-btn">
-                        <div class="page-tab-txt active">
+                        <div class="page-tab-txt">
                             Stock
                         </div>
                     </div>
                     <div class="page-tab-btn">
-                        <div class="page-tab-txt">
-                            Upload
+                        <div class="page-tab-txt ">
+                            Users
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt ">
+                            Businesses
                         </div>
                     </div>
                     <div class="page-tab-btn">
@@ -125,7 +131,7 @@
                 <div class="col-lg-3">
                     <div class="busineess_name">
                         <img src="img/logo only.png" class="busineess_name_image" />
-                        <div class="busineess_name_value">Chunk Stores</div>
+                        <div class="busineess_name_value">BACK OFFICCEE</div>
                     </div>
                 </div>
             </div>
@@ -133,150 +139,80 @@
         <div class="section mt-10">
             <div class="row mrl-15">
                 <!-- table -->
-                <div class="col-lg-8 bdr bgw shd">
-                    <div>
-                        <!-- to add a summary on search results -->
-                    </div>
+                <div class="col-lg-10 bdr bgw shd">
+                    <diV>
+                        <!-- nyd summary and date filters -->
+                    </diV>
                     <div class="result-row">
                         <table class="table">
                             <thead>
-                                <tr class="stock-row">
+                                <tr>
                                     <th class="wdt-10 tac"></th>
-                                    <th class="wdt-80">Kind</th>
+                                    <th class="wdt-80x">Date</th>
+                                    <th class="tac">Customer</th>
                                     <th class="wdt-80"></th>
-                                    <th class="wdt-150x">Item</th>
-                                    <th class="tac wdt-150">State</th>
+                                    <th class="wdt-150">Item</th>
+                                    <th class="tac wdt-150">Quantity</th>
+                                    <th class="tar">Price (ugx)</th>
+                                    <th class="tar">Cost (ugx)</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="result in searchResults" class="stock-row">
+                                <tr v-for="result in searchResults">
                                     <td class="wdt-10 tac">17</td>
-                                    <td class="wdt-10 tac">
-                                        Clothes
-                                        <hr />
-                                        <i class="fa fa-female" aria-hidden="true"></i>
-                                        Female
+                                    <td class="wdt-80x">2019-08-04 <br /> (5 hours ago)</td>
+                                    <td class="wdt-150 tac">
+                                        <img src="img/logo only.png" class="customer-table-avatar" /> <br />
+                                        <i class="fa fa-male" aria-hidden="true"></i>
+                                        Nyola Mike <br />
+                                        0772457957
                                     </td>
                                     <td class="wdt-80">
                                         <img src="img/dummy.jpg" class="list-item-img" />
                                     </td>
-                                    <td class="wdt-150x">
+                                    <td class="wdt-150">
                                         <div class="list-item-name">
                                             white body armour that is a very long header
-                                            <button class="btn btn-danger btn-tiny fr" type="button">
-                                                    <i class="fa fa-edit"></i>
-                                                    edit
-                                                </button>
+                                        </div>
+                                        <div class="list-item-name">
+                                            from: chunck store that has a very long name i dont nnow why
                                             <button class="btn btn-clear btn-tiny fr" type="button">
                                                 <i class="fa fa-eye app-color"></i>
                                                 View
                                             </button>
-                                            
-                                            <hr />
-                                            <div class="stock-fact">
-                                                <div class="stock-fact-name">
-                                                    ages:
-                                                </div>
-                                                <div class="stock-fact-value">
-                                                    Youth (18-36),
-                                                    Adult (37-65),
-                                                    Grandy (66+)
-                                                </div>
-                                                <div class="clear">
-
-                                                </div>
-                                            </div>
-                                            <div class="stock-fact">
-                                                <div class="stock-fact-name">
-                                                    colors:
-                                                </div>
-                                                <div class="stock-fact-value">
-                                                    <span>
-                                                        <div class="fav-color-red"></div>Red
-                                                    </span>
-                                                    <span>
-                                                        <div class="fav-color-yellow"></div>Yellow
-                                                    </span>
-                                                    <span>
-                                                        <div class="fav-color-black"></div>Black
-                                                    </span>
-                                                </div>
-                                                <div class="clear">
-
-                                                </div>
-                                            </div>
-                                            <div class="stock-fact">
-                                                <div class="stock-fact-name">
-                                                    sizes:
-                                                </div>
-                                                <div class="stock-fact-value">
-                                                    Medium (M), Large (L)
-                                                </div>
-                                                <div class="clear">
-
-                                                </div>
-                                            </div>
-                                            <div class="stock-fact">
-                                                <div class="stock-fact-name">
-                                                    materials:
-                                                </div>
-                                                <div class="stock-fact-value">
-                                                    Leather, Cotton
-                                                </div>
-                                                <div class="clear">
-
-                                                </div>
-                                            </div>
-                                            <div class="stock-fact">
-                                                <div class="stock-fact-name">
-                                                    Types:
-                                                </div>
-                                                <div class="stock-fact-value">
-                                                    Officeee
-                                                </div>
-                                                <div class="clear">
-
-                                                </div>
-                                            </div>
-                                            <div class="stock-fact">
-                                                <div class="stock-fact-name">
-                                                    Categories:
-                                                </div>
-                                                <div class="stock-fact-value">
-                                                    Shirts
-                                                </div>
-                                                <div class="clear">
-
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </td>
                                     <td class="wdt-150 tac">
-                                        <div class="input-group input-group-sm">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-warning btlr-4 bblr-4 btn-tiny" type="button">
-                                                    <i class="fa fa-plus"></i>
-                                                    ADD
-                                                </button>
-                                            </div>
-                                            <!-- disabled because we dont want input here -->
-                                            <input type="text" class="form-control search-bg text-center ht-20" disabled
-                                                value="100" placeholder="">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-danger btn-tiny" type="button">
-                                                    <i class="fa fa-minus"></i>
-                                                    REM
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <hr />
-
-                                        <div class="item-list-price tar">(available)</div>
-                                        <div class="item-list-price tar"><b>120,607,000 ugx</b></div>
-                                        <div class="item-list-price-old tar">120,607,000 ugx</div>
-                                        <div class="item-list-price-discount tar">50% discount ugx</div>
+                                        100
+                                    </td>
+                                    <td class="tar">
+                                        <div class="item-list-price">120,607,000</div>
+                                        <div class="item-list-price-old">120,607,000</div>
+                                        <div class="item-list-price-discount">50% discount</div>
                                         <!-- <div class="item-list-price-discount">500 delivery</div> -->
+                                    </td>
+                                    <td class="tar">
+                                        1,120,607,000
+                                    </td>
+                                    <td>
+                                        <div><b>Pending</b></div> <br />
+                                        <button class="btn btn-warning btn-sm btn-tiny" type="button">
+                                            <i class="fa fa-check"></i>
+                                            packed
+                                        </button> <br />
+                                        <button class="btn btn-info btn-sm btn-tiny" type="button">
+                                            <i class="fa fa-check"></i>
+                                            collected
+                                        </button> <br />
+                                        <button class="btn btn-primary btn-sm btn-tiny" type="button">
+                                            <i class="fa fa-check"></i>
+                                            delivered
+                                        </button> <br />
+                                        <button class="btn btn-danger btn-sm  btn-tiny" type="button">
+                                            <i class="fa fa-exclamation"></i>
+                                            bounced
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -286,18 +222,25 @@
                 <!-- filter  -->
                 <div class="col-lg-2  pl-0">
                     <div class="bdr bgw shd app-height">
-                        <div class="tac p-5">
-                            <button class="btn btn-primary btn-sm btn-block">
-                                <i class="fa fa-upload" aria-hidden="true"></i>
-                                Upload New Item
-                            </button>
-                        </div>
-                        <div class="tac">
-                            <b>Filter Stock</b>
-                        </div>
                         <div class="prl-4 cp fbox">
-                            <input type="checkbox" class="mtr-5 cp" />
-                            <label class="cp fs-14"> Show Out Of Stock &nbsp;</label>
+                                <div class="fs-14 "> Filter By Status: &nbsp;</div>
+                                <select class="form-control search-bg setup-input-field cp mb-5">
+                                    <option>Show all</option>
+                                    <option>Pending</option>
+                                    <option>Bought</option>
+                                    <option>Collected</option>
+                                    <option>Delivered</option>
+                                    <option>Bounced</option>
+                                </select>
+                            </div>
+                        <div class="prl-4 cp fbox">
+                            <div class="fs-14 "> Filter By Businesse: &nbsp;</div>
+                            <select class="form-control search-bg setup-input-field cp mb-5">
+                                <option>Show all</option>
+                                <option>Chunk Store</option>
+                                <option>Brendas Bridal</option>
+                                <option>Briton Shines</option>
+                            </select>
                         </div>
                         <div class="prl-4 cp fbox">
                             <div class="fs-14 "> Filter By Kind: &nbsp;</div>
@@ -309,13 +252,13 @@
                             </select>
                         </div>
                         <div class="prl-4 cp fbox">
-                                <div class="fs-14 "> Filter By Sex: &nbsp;</div>
-                                <select class="form-control search-bg setup-input-field cp mb-5">
-                                    <option>Show all</option>
-                                    <option >male</option>
-                                    <option >female</option>
-                                </select>
-                            </div>
+                            <div class="fs-14 "> Filter By Gender: &nbsp;</div>
+                            <select class="form-control search-bg setup-input-field cp mb-5">
+                                <option>Show all</option>
+                                <option>male</option>
+                                <option>female</option>
+                            </select>
+                        </div>
                         <div class="prl-4 cp fbox">
                             <div class="fs-14 "> Filter By Category: &nbsp;</div>
                             <select class="form-control search-bg setup-input-field cp mb-5">
@@ -353,10 +296,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- adds column -->
-                <div class="col-lg-2 bdr bgw shd">
-
-                </div>
             </div>
 
         </div>
@@ -372,7 +311,7 @@
     <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="mb-stock.js"></script>
+    <script src="bo-purchases.js"></script>
 </body>
 
 </html>

@@ -18,6 +18,10 @@
     padding-top: 8px;
 }
 
+.pt-3{
+    padding-top: 3px !important;
+}
+
 
 .p-5{
     padding: 5px !important;
@@ -1202,6 +1206,13 @@
     margin-left: 5px;
 }
 
+.ht-550-scroll{
+    min-height: 550px;
+    height: 550px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .ht-480-scroll{
     min-height: 480px;
     height: 480px;
@@ -1227,4 +1238,18 @@
 
 .mb--2{
     margin-bottom: -2px;
+}
+
+.report-menu{
+    padding-left: 15px;
+    background-color: #e6e3e214;
+    border-bottom: 1px solid #e6e3e2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.report-menu.active{
+    color: #3b9094;
+    background-color: white;
+    padding-left: 25px;
 }

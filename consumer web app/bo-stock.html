@@ -25,10 +25,10 @@
                     <a href="" class="top-header-link">About</a>
                     <a href="" class="top-header-link">Delivery</a>
                     <!-- <a href="" class="top-header-link">Modummy</a>
-                    <a href="" class="top-header-link">Fashlog</a>
-                    <a href="" class="top-header-link">Events</a>
-                    <a href="" class="top-header-link">News</a>
-                    <a href="" class="top-header-link">History</a> -->
+                            <a href="" class="top-header-link">Fashlog</a>
+                            <a href="" class="top-header-link">Events</a>
+                            <a href="" class="top-header-link">News</a>
+                            <a href="" class="top-header-link">History</a> -->
                 </div>
                 <div class="col-lg-5 ht-40 pt-5">
                     <div class="btn-group white">
@@ -62,7 +62,8 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                     <div v-if="user  != null" class="fr prl-4 header-account-name">Nyola Mike Name Is Very Long</div>
-                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Business</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Officcee</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name">Business</div>
                     <div v-if="user  != null" class="fr prl-4 header-account-name ">Orders</div>
 
                     <button v-if="user == null" class="btn btn-sm btn-warning fr" href="#">
@@ -107,8 +108,13 @@
                         </div>
                     </div>
                     <div class="page-tab-btn">
-                        <div class="page-tab-txt">
-                            Upload
+                        <div class="page-tab-txt ">
+                            Users
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt ">
+                            Businesses
                         </div>
                     </div>
                     <div class="page-tab-btn">
@@ -125,7 +131,7 @@
                 <div class="col-lg-3">
                     <div class="busineess_name">
                         <img src="img/logo only.png" class="busineess_name_image" />
-                        <div class="busineess_name_value">Chunk Stores</div>
+                        <div class="busineess_name_value">BACK OFFICCEE</div>
                     </div>
                 </div>
             </div>
@@ -133,9 +139,9 @@
         <div class="section mt-10">
             <div class="row mrl-15">
                 <!-- table -->
-                <div class="col-lg-8 bdr bgw shd">
+                <div class="col-lg-10 bdr bgw shd">
                     <div>
-                        <!-- to add a summary on search results -->
+                        <!-- nyd to add a summary on search results -->
                     </div>
                     <div class="result-row">
                         <table class="table">
@@ -146,6 +152,7 @@
                                     <th class="wdt-80"></th>
                                     <th class="wdt-150x">Item</th>
                                     <th class="tac wdt-150">State</th>
+                                    <th class="tac wdt-150">Business</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -163,15 +170,10 @@
                                     <td class="wdt-150x">
                                         <div class="list-item-name">
                                             white body armour that is a very long header
-                                            <button class="btn btn-danger btn-tiny fr" type="button">
-                                                    <i class="fa fa-edit"></i>
-                                                    edit
-                                                </button>
                                             <button class="btn btn-clear btn-tiny fr" type="button">
                                                 <i class="fa fa-eye app-color"></i>
                                                 View
                                             </button>
-                                            
                                             <hr />
                                             <div class="stock-fact">
                                                 <div class="stock-fact-name">
@@ -253,30 +255,19 @@
                                         </div>
                                     </td>
                                     <td class="wdt-150 tac">
-                                        <div class="input-group input-group-sm">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-warning btlr-4 bblr-4 btn-tiny" type="button">
-                                                    <i class="fa fa-plus"></i>
-                                                    ADD
-                                                </button>
-                                            </div>
-                                            <!-- disabled because we dont want input here -->
-                                            <input type="text" class="form-control search-bg text-center ht-20" disabled
-                                                value="100" placeholder="">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-danger btn-tiny" type="button">
-                                                    <i class="fa fa-minus"></i>
-                                                    REM
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <div class="item-list-price tar">200 available</div>
                                         <hr />
 
-                                        <div class="item-list-price tar">(available)</div>
+
                                         <div class="item-list-price tar"><b>120,607,000 ugx</b></div>
                                         <div class="item-list-price-old tar">120,607,000 ugx</div>
                                         <div class="item-list-price-discount tar">50% discount ugx</div>
                                         <!-- <div class="item-list-price-discount">500 delivery</div> -->
+                                    </td>
+                                    <td class="wdt-150 tac">
+                                        Chunck Store
+                                        <hr />
+                                        0703158861
                                     </td>
                                 </tr>
                             </tbody>
@@ -286,18 +277,21 @@
                 <!-- filter  -->
                 <div class="col-lg-2  pl-0">
                     <div class="bdr bgw shd app-height">
-                        <div class="tac p-5">
-                            <button class="btn btn-primary btn-sm btn-block">
-                                <i class="fa fa-upload" aria-hidden="true"></i>
-                                Upload New Item
-                            </button>
-                        </div>
                         <div class="tac">
                             <b>Filter Stock</b>
                         </div>
                         <div class="prl-4 cp fbox">
                             <input type="checkbox" class="mtr-5 cp" />
                             <label class="cp fs-14"> Show Out Of Stock &nbsp;</label>
+                        </div>
+                        <div class="prl-4 cp fbox">
+                            <div class="fs-14 "> Filter By Businesse: &nbsp;</div>
+                            <select class="form-control search-bg setup-input-field cp mb-5">
+                                <option>Show all</option>
+                                <option>Chunk Store</option>
+                                <option>Brendas Bridal</option>
+                                <option>Briton Shines</option>
+                            </select>
                         </div>
                         <div class="prl-4 cp fbox">
                             <div class="fs-14 "> Filter By Kind: &nbsp;</div>
@@ -309,13 +303,13 @@
                             </select>
                         </div>
                         <div class="prl-4 cp fbox">
-                                <div class="fs-14 "> Filter By Sex: &nbsp;</div>
-                                <select class="form-control search-bg setup-input-field cp mb-5">
-                                    <option>Show all</option>
-                                    <option >male</option>
-                                    <option >female</option>
-                                </select>
-                            </div>
+                            <div class="fs-14 "> Filter By Sex: &nbsp;</div>
+                            <select class="form-control search-bg setup-input-field cp mb-5">
+                                <option>Show all</option>
+                                <option>male</option>
+                                <option>female</option>
+                            </select>
+                        </div>
                         <div class="prl-4 cp fbox">
                             <div class="fs-14 "> Filter By Category: &nbsp;</div>
                             <select class="form-control search-bg setup-input-field cp mb-5">
@@ -353,10 +347,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- adds column -->
-                <div class="col-lg-2 bdr bgw shd">
-
-                </div>
             </div>
 
         </div>
@@ -372,7 +362,7 @@
     <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="mb-stock.js"></script>
+    <script src="bo-stock.js"></script>
 </body>
 
 </html>

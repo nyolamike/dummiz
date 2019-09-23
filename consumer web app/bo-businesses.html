@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>dummiz - reports</title>
+    <title>dummiz - businesses</title>
 
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font awesome 5 -->
@@ -62,7 +62,8 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                     <div v-if="user  != null" class="fr prl-4 header-account-name">Nyola Mike Name Is Very Long</div>
-                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Business</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Officcee</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name">Business</div>
                     <div v-if="user  != null" class="fr prl-4 header-account-name ">Orders</div>
 
                     <button v-if="user == null" class="btn btn-sm btn-warning fr" href="#">
@@ -107,12 +108,17 @@
                         </div>
                     </div>
                     <div class="page-tab-btn">
-                        <div class="page-tab-txt">
-                            Upload
+                        <div class="page-tab-txt ">
+                            Users
                         </div>
                     </div>
                     <div class="page-tab-btn">
                         <div class="page-tab-txt active">
+                            Businesses
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
                             Reports
                         </div>
                     </div>
@@ -125,59 +131,33 @@
                 <div class="col-lg-3">
                     <div class="busineess_name">
                         <img src="img/logo only.png" class="busineess_name_image" />
-                        <div class="busineess_name_value">Chunk Stores</div>
+                        <div class="busineess_name_value">BACK OFFICCEE</div>
                     </div>
                 </div>
             </div>
         </nav>
         <div class="section mt-10">
             <div class="row mrl-15">
-                <!-- small menu column -->
-                <div class="col-lg-2  pl-0">
-                    <div class="bdr bgw shd app-height">
-                        <br />
-                        <div class="cp report-menu active">
-                            Sales Report
-                        </div>
-                        <div class="cp report-menu">
-                            Sales Graphs
-                        </div>
-                    </div>
-                </div>
-                <!-- report render column -->
-                <div class="col-lg-8  pl-0">
+                <div class="col-lg-12 ">
                     <div class="bdr bgw shd ht-40">
                         <div class="row">
-                            <div class="col-lg-3 pt-3">
-                                <div class="input-group input-group-sm ">
-                                    <label class="pl-5">From:&nbsp;</label>
-                                    <input type="text" class="form-control search-bg" placeholder="" value="2019-09-01">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="col-lg-1 pt-3">
+
+                            </div>
+                            <div class="col-lg-2 pt-3">
+                                Total: <b>256</b>
                             </div>
                             <div class="col-lg-3 pt-3">
-                                <div class="input-group input-group-sm ">
-                                    <label>To:&nbsp;</label>
-                                    <input type="text" class="form-control search-bg" placeholder="" value="2019-09-23">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
                             </div>
                             <div class="col-lg-3 pt-3">
                                 <div class="input-group input-group-sm ">
                                     <label>Filter By:&nbsp;</label>
                                     <select class="form-control search-bg">
                                         <option>-- none --</option>
-                                        <option>Clothes</option>
-                                        <option>Shoes</option>
-                                        <option>Bags</option>
+                                        <option>Freemium</option>
+                                        <option>Standard</option>
+                                        <option>Professional</option>
+                                        <option>Premium</option>
                                     </select>
                                 </div>
                             </div>
@@ -194,41 +174,63 @@
                         </div>
                     </div>
                     <div class="bdr bgw shd ht-550-scroll">
-                        <div class="tac">
-                            Sales report from 2019-09-01 to 2019-09-23
-                        </div>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Date</th>
-                                    <th>Kind</th>
-                                    <th>Item</th>
-                                    <th>Customer</th>
-                                    <th class="tar">Amount</th>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Package</th>
+                                    <th>Since</th>
+                                    <th>Owner</th>
+                                    <th></th>
+                                    <th>Location</th>
+                                    <th>Last Access</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="i in [1,2,3,4,5,6,7,8]">
-                                    <td>2019-09-01</td>
-                                    <td>clothes</td>
-                                    <td>white body armour</td>
-                                    <td>nyola mike <small>(0703158861)</small></td>
-                                    <td class="tar">1,200,400,666</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Total</b></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="tar"><b>5,200,400,666</b></td>
+                                    <td>
+                                        <img src="img/logo only.png" class="customer-table-avatar" />
+                                    </td>
+                                    <td>Chunk Store</td>
+                                    <td>0703158861</td>
+                                    <td>
+                                        <b>Premium</b>
+                                    </td>
+                                    <td>
+                                        2 days ago <br/>(2019-09-20)
+                                    </td>
+                                    <td>
+                                            <img src="img/logo only.png" class="customer-table-avatar" />
+                                    </td>
+                                    <td>Nyola Mike</td>
+                                    <td>
+                                        Kampla- Ntinda Shooping Mall
+                                    </td>
+                                    <td>
+                                            2 days ago <br/>(2019-09-20)
+                                    </td>
+                                    <td>
+                                        Enabled
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <!-- adds column -->
-                <div class="col-lg-2 bdr bgw shd">
-
                 </div>
             </div>
 
@@ -245,7 +247,7 @@
     <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="mb-reports.js"></script>
+    <script src="bo-users.js"></script>
 </body>
 
 </html>
