@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dummiz - upload</title>
+
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font awesome 5 -->
+    <link href="./fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
+    <!-- application styles -->
+    <link href="app.css" rel="stylesheet" />
+</head>
+
+<body class="bg">
+
+    <div class="wrapper" id="indexApp">
+        <!-- top nav bar -->
+        <nav class="section">
+            <div class="row mrl-15 bdr bt-0 bgw shd">
+                <div class="col-lg-3 ht-40 pt-5">
+                    <a href="" class="top-header-link">Help</a>
+                    <a href="" class="top-header-link">About</a>
+                    <a href="" class="top-header-link">Delivery</a>
+                    <!-- <a href="" class="top-header-link">Modummy</a>
+                        <a href="" class="top-header-link">Fashlog</a>
+                        <a href="" class="top-header-link">Events</a>
+                        <a href="" class="top-header-link">News</a>
+                        <a href="" class="top-header-link">History</a> -->
+                </div>
+                <div class="col-lg-5 ht-40 pt-5">
+                    <div class="btn-group white">
+                        <a class="btn btn-facebook smb" title="Facebook" target="_blank" href="#">TSi</a>
+                        <a class="btn btn-facebook smb" title="Facebook" target="_blank" href="#"><i
+                                class="fab fa-facebook-f  fa-fw"></i></a>
+                        <a class="btn btn-instagram smb" title="Instagram" target="_blank" href="#"><i
+                                class="fab fa-instagram  fa-fw"></i></a>
+                        <a class="btn btn-youtube smb" title="Youtube" target="_blank" href="#"><i
+                                class="fab fa-youtube  fa-fw"></i></a>
+                        <a class="btn btn-twitter smb" title="Twitter" target="_blank" href="#"><i
+                                class="fab fa-twitter  fa-fw"></i></a>
+                        <a class="btn btn-whatsapp smb" title="Twitter" target="_blank" href="#"><i
+                                class="fab fa-whatsapp  fa-fw"></i></a>
+                    </div>
+                    <div class="icontext">
+                        <div class="icon-wrap iw">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="text-wrap tw">
+                            <div>+256 703 158 861, +256 774 085 041</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 ht-40 pt-5 pr-5 hide-on-load">
+                    <div v-if="user != null" class="fr pl-5 logoff-btn">
+                        <i class="fa fa-power-off " aria-hidden="true"></i>
+                        log out
+                    </div>
+                    <div v-if="user != null" class="fr shopping-cart-icon-container-sm mr-15">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name">Nyola Mike Name Is Very Long</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name active-useres-page">Business</div>
+                    <div v-if="user  != null" class="fr prl-4 header-account-name ">Orders</div>
+
+                    <button v-if="user == null" class="btn btn-sm btn-warning fr" href="#">
+                        log in
+                    </button>
+                    <div v-if="user == null" class="fr prl-15">or</div>
+                    <button v-if="user == null" class="btn btn-sm  btn-warning fr" href="#">
+                        create your account
+                    </button>
+                </div>
+            </div>
+            <div class="row mrl-15 bdr bt-0 bgw shd">
+                <div class="col-lg-2">
+                    <a class="navbar-brand" href="#">
+                        <img src="./img/logo trimmed.png" alt="">
+                    </a>
+                    <div class="location-brand">
+                        Kampala - Uganda
+                        <img class="brand-flag" src="img/flag-uganda.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Home
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt ">
+                            Product
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Items Sold
+                            <label class="badge bg-red">100</label>
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Stock
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt active">
+                            Upload
+                        </div>
+                        <!-- 
+                            nyd
+                            this will turn into edit
+                            <div class="page-tab-txt active">
+                                Edit Item
+                            </div>
+                        -->
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Reports
+                        </div>
+                    </div>
+                    <div class="page-tab-btn">
+                        <div class="page-tab-txt">
+                            Settings
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="busineess_name">
+                        <img src="img/logo only.png" class="busineess_name_image" />
+                        <div class="busineess_name_value">Chunk Stores</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="section mt-10">
+            <div class="row mrl-15">
+                <!-- display column -->
+                <div class="col-lg-10  pl-0">
+                    <div class="bdr bgw shd app-height">
+                        <ul class="nav nav-tabs mt-8">
+                            <li>
+                                <a href="#">
+                                    <b>UPLOAD ITEM FORM</b>
+                                </a>
+                                <!-- <a href="#">
+                                        <b>EDIT ITEM FORM</b>
+                                    </a> -->
+                            </li>
+                            <li>
+                                <a href="#item_tab_upload_basic" class="active" data-toggle="tab">
+                                    Basic Info
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#item_tab_upload_filter_1" data-toggle="tab">
+                                    Handling, Age & Size
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#item_tab_upload_filter_2" data-toggle="tab">
+                                    Type & Category
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#item_tab_upload_filter_3" data-toggle="tab">
+                                    Material & Colors
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#item_tab_upload_pictures" data-toggle="tab">
+                                    Pictures
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#item_tab_upload_submit" data-toggle="tab">
+                                    Preview & Submit
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="#">
+
+                                    <button class="btn btn-warning btn-xs btn-tiny">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        councle edit
+                                    </button>
+
+                                </a>
+                            </li> -->
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="item_tab_upload_basic">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Item Kind</label>
+                                            <select class="form-control search-bg">
+                                                <option>--- Select One---</option>
+                                                <option>Clothes</option>
+                                                <option>Shoes</option>
+                                                <option>Bags</option>
+                                            </select>
+                                            <label class="form-error-label">item kind is required</label>
+                                        </div>
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Item Name</label>
+                                            <input type="text" class="form-control search-bg" placeholder="">
+                                            <label class="form-error-label">item name is required</label>
+                                        </div>
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Brand Label</label>
+                                            <input type="text" class="form-control search-bg" placeholder="">
+                                            <label class="form-error-label">this error</label>
+                                        </div>
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Description</label>
+                                            <textarea rows="3" class="form-control search-bg" placeholder=""></textarea>
+                                            <label class="form-error-label">is required</label>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Gender</label>
+                                            <select class="form-control search-bg">
+                                                <option>--- Select One---</option>
+                                                <option>Female</option>
+                                                <option>Male</option>
+                                                <option>Any</option>
+                                            </select>
+                                            <label class="form-error-label">gender is required</label>
+                                        </div>
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Current Stock Quantity</label>
+                                            <input type="text" class="form-control search-bg" placeholder="">
+                                            <label class="form-error-label">this error</label>
+                                        </div>
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Historical Usage</label>
+                                            <select class="form-control search-bg">
+                                                <option>--- Select One---</option>
+                                                <option>Second Hand</option>
+                                                <option>First Hand</option>
+                                                <option>Not Sure</option>
+                                            </select>
+                                            <label class="form-error-label">this error</label>
+                                        </div>
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Made In</label>
+                                            <select class="form-control search-bg">
+                                                <option>--- Select One---</option>
+                                                <option>Uganda</option>
+                                                <option>China</option>
+                                                <option>USA</option>
+                                                <option>Canada</option>
+                                            </select>
+                                            <label class="form-error-label">this error</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="ht-490-scroll">
+                                            <div class="input-group mb-10">
+                                                <label class="form-label">Current Maximun Price</label>
+                                                <input type="text" class="form-control search-bg" placeholder="">
+                                                <label class="form-error-label">this error</label>
+                                            </div>
+                                            <div class="input-group mb-10">
+                                                <label class="form-label">Current Minimun Price</label>
+                                                <input type="text" class="form-control search-bg" placeholder="">
+                                                <label class="form-error-label">this error</label>
+                                            </div>
+                                            <div class="input-group mb-10">
+                                                <label class="form-label">Former/Previous Price</label>
+                                                <input type="text" class="form-control search-bg" placeholder="">
+                                                <label class="form-error-label">this error</label>
+                                            </div>
+                                            <div class="input-group mb-10 mt-10">
+                                                <label class="form-label">Discount (automatic)</label>
+                                                <input type="text" class="form-control search-bg" disabled
+                                                    placeholder="">
+                                                <label class="form-info-label">
+                                                    the discount is automatically calculated
+                                                    using the current maximum price and former price, usally the
+                                                    former price is higher than the current maximum price
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+
+                                        <button class="btn btn-sm btn-primary fr">
+                                            Next
+                                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="item_tab_upload_filter_1">
+                                <div class="row">
+                                    <div class="col-lg-4">
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Warrant Days</label>
+                                            <input type="text" class="form-control search-bg" placeholder="">
+                                            <label class="form-info-label">
+                                                How many days are clients allowed to file complains
+                                            </label>
+                                        </div>
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Guarantee Policy</label>
+                                            <select class="form-control search-bg">
+                                                <option>--- Select One---</option>
+                                                <option>Money Back</option>
+                                                <option>Replacement</option>
+                                                <option>None</option>
+                                            </select>
+                                            <label class="form-error-label">item kind is required</label>
+                                        </div>
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Special Features</label>
+                                            <textarea rows="3" class="form-control search-bg" placeholder=""></textarea>
+                                            <label class="form-error-label">one per line</label>
+                                        </div>
+
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">How To Clean and Iron</label>
+                                            <textarea rows="3" class="form-control search-bg" placeholder=""></textarea>
+                                            <label class="form-error-label">is required</label>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Age Groups</label>
+                                            <label class="form-error-label">gender is required</label>
+                                            <div class="form-filter-input" v-for="age_group in age_groups">
+                                                <div class="row">
+                                                    <div class="col-lg-1">
+                                                        <input type="checkbox" class="cp">
+                                                    </div>
+                                                    <div class="col-lg-10">
+                                                        {{age_group.name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="ht-480-scroll">
+                                            <div class="input-group mb-10 ">
+                                                <label class="form-label">Sizes</label>
+                                                <label class="form-error-label">size is required</label>
+                                                <div class="form-filter-input" v-for="size in sizes">
+                                                    <div class="row">
+                                                        <div class="col-lg-1">
+                                                            <input type="checkbox" class="cp">
+                                                        </div>
+                                                        <div class="col-lg-10">
+                                                            {{size.name}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary fl">
+                                            <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                                            Back
+                                        </button>
+                                        <button class="btn btn-sm btn-primary fr">
+                                            Next
+                                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="item_tab_upload_filter_2">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Types</label>
+                                            <label class="form-error-label">select atleast one type</label>
+                                        </div>
+                                        <div class="ht-400-scroll">
+                                            <div class="form-filter-inline-input wdt-40p" v-for="type in types">
+                                                <div class="row">
+                                                    <div class="col-lg-1">
+                                                        <input type="checkbox" class="cp">
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        {{type.name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group mb-10 ">
+                                            <label class="form-label">Categories</label>
+                                            <label class="form-error-label">Select at least one category</label>
+                                        </div>
+                                        <div class="ht-400-scroll">
+                                            <div class="form-filter-inline-input wdt-30p"
+                                                v-for="category in categories">
+                                                <div class="row">
+                                                    <div class="col-lg-1">
+                                                        <input type="checkbox" class="cp">
+                                                    </div>
+                                                    <div class="col-lg-10">
+                                                        {{category.name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <button class="btn btn-sm btn-primary fl">
+                                                    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                                                    Back
+                                                </button>
+                                                <button class="btn btn-sm btn-primary fr">
+                                                    Next
+                                                    <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="item_tab_upload_filter_3">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="input-group mb-10">
+                                            <label class="form-label">Materials</label>
+                                            <label class="form-error-label">select atleast one material</label>
+                                        </div>
+                                        <div class="ht-400-scroll">
+                                            <div class="form-filter-inline-input wdt-40p" v-for="material in materials">
+                                                <div class="row">
+                                                    <div class="col-lg-1">
+                                                        <input type="checkbox" class="cp">
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        {{material.name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group mb-10 ">
+                                            <label class="form-label">Colours</label>
+                                            <label class="form-error-label">Select at least one color</label>
+                                        </div>
+                                        <div class="ht-400-scroll">
+                                            <div class="form-filter-inline-input wdt-30p" v-for="color in colors">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <input type="checkbox" class="cp">
+                                                        <div class="fav-color-red mb--2"></div>
+                                                    </div>
+                                                    <div class="col-lg-7">
+                                                        {{color.name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <button class="btn btn-sm btn-primary fl">
+                                                    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                                                    Back
+                                                </button>
+                                                <button class="btn btn-sm btn-primary fr">
+                                                    Next
+                                                    <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="item_tab_upload_pictures">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <div>Pictures Of This Item</div>
+                                        <div class="ht-480-scroll bdr">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="ht-400-scroll">
+                                            <div class="pic-box-preview">
+                                                <img src="img/logo only.png" />
+                                            </div>
+                                            <input type="file" class="hidden" />
+                                            <div class="cp mb-10">
+                                                <input type="checkbox" class="cp"> Is Default Picture
+                                            </div>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block">
+                                                <i class="fa fa-camera" aria-hidden="true"></i>
+                                                upload picture
+                                            </button>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary fl">
+                                            <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                                            Back
+                                        </button>
+                                        <button class="btn btn-sm btn-primary fr">
+                                            Next
+                                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="item_tab_upload_submit">
+                                <div class="row">
+                                    <div class="col-lg-9"></div>
+                                    <div class="col-lg-3">
+                                        <div class="ht-400-scroll">
+                                        </div>
+                                        <button class="btn btn-sm btn-primary fl">
+                                            <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                                            Back
+                                        </button>
+                                        <button class="btn btn-sm btn-primary fr">
+                                            Submit Item
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- adds column -->
+                <div class="col-lg-2 bdr bgw shd">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+        Copyright &copy; 2019 mocaloyn, all rights reserved
+    </div>
+
+
+
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="./node_modules/popper.js/dist/popper.min.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="mb-upload.js"></script>
+</body>
+
+</html>
